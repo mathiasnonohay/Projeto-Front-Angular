@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pEasyMarine"
+    }
+  },
+  "defaultProject": "pEasyMarine",
+  "cli": {
+    "analytics": "58f975e0-2334-49fd-b79f-40fc06f8fd04"
+  }
 }

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="cadastro.component.css" />
+    <title>Easy Marine</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-3 logo">
+              <img
+                src="C:\Users\Usuário\pEasyMarine\src\app\cadastro\imagens\logo-easymarine.jpg"
+                class="img-fluid"
+                alt="Logo Easy Marine"
+              />
+            </div>
+            <div class="col-md-6 titulo">
+              <p>Plataforma de gestão náutica</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-10 texto">
+              <p class="text-justify">
+                Sistema desenvolvido para auxiliar na gestão e transparência das
+                atividades operacionais de Marinas e garagens náuticas, que
+                conta com aplicativo para gestores e clientes tornando a
+                comunicação muito mais dinâmica entre clientes, Marinas e seus
+                colaboradores.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <img
+                src="C:\Users\Usuário\pEasyMarine\src\app\cadastro\imagens\google-play-badge.jpg"
+                class="img-fluid app"
+                alt="Google Play Logo"
+              />
+            </div>
+            <div class="col-md-2">
+              <img
+                src="C:\Users\Usuário\pEasyMarine\src\app\cadastro\imagens\app-store-badge.jpg"
+                class="img-fluid app"
+                alt="AppStore Logo"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 form">
+          <form [formGroup]="formularioDeCadastro" (ngSubmit)="onSubmit()">
+            <div>
+              <label for="nome">Nome: </label>
+              <input
+                type="text"
+                formControlName="nome"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form.nome.errors }"
+              />
+              <div
+                *ngIf="submitted && form.nome.errors"
+                class="invalid-feedback"
+              >
+                <p *ngIf="form.nome.errors.required">Nome é ogrigatorio.</p>
+                <p *ngIf="form.nome.errors.minLength">
+                  Nome deve ter no mínimo 6 caracteres.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <label for="email">E-mail: </label>
+              <input
+                type="text"
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form.email.errors }"
+              />
+              <div
+                *ngIf="submitted && form.email.errors"
+                class="invalid-feedback"
+              >
+                <p *ngIf="form.email.errors.required">E-mail é ogrigatorio.</p>
+                <p *ngIf="form.email.errors.email">Digite um e-mail válido.</p>
+              </div>
+            </div>
+
+            <div>
+              <label for="senha">Senha: </label>
+              <input
+                type="password"
+                formControlName="senha"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && form.senha.errors }"
+              />
+              <div
+                *ngIf="submitted && form.senha.errors"
+                class="invalid-feedback"
+              >
+                <p *ngIf="form.senha.errors.required">Senha é obrigatória.</p>
+                <p *ngIf="form.senha.errors.minLength">
+                  Senha deve ter no mínimo 6 caracteres.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <label for="confirmarSenha">Confirmar Senha: </label>
+              <input
+                type="password"
+                formControlName="confirmarSenha"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid': submitted && form.confirmarSenha.errors
+                }"
+              />
+              <div
+                *ngIf="submitted && form.confirmarSenha.errors"
+                class="invalid-feedback"
+              >
+                <p *ngIf="form.confirmarSenha.errors.required">
+                  Confirme sua senha.
+                </p>
+                <p *ngIf="form.confirmarSenha.errors.senhasNaoCoincidem">
+                  As senhas não coincidem.
+                </p>
+              </div>
+            </div>
+
+            <br />
+            <div>
+              <button class="btn btn-primary mr-1">Cadastrar</button>
+              <button
+                class="btn btn-secondary"
+                type="reset"
+                (click)="onReset()"
+              >
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

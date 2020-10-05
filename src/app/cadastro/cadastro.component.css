@@ -1,0 +1,50 @@
+.form {
+  background: rgba(255, 255, 255, 0.2);
+  background-color: whitesmoke;
+  border-color: orange;
+  border-radius: 10px;
+  margin-top: 175px;
+  padding: 20px;
+  margin-bottom: 478px;
+  width: 500px;
+}
+body {
+  background-attachment: fixed;
+  background-image: url(C:\Users\Usuário\pEasyMarine\src\app\cadastro\imagens\fundo.jpg);
+  background-size: inherit;
+  background-repeat: no-repeat;
+}
+.titulo {
+  margin-top: 100px;
+  margin-left: 122px;
+  margin-bottom: 75px;
+  color: white;
+  font-size: 26px;
+  font-weight: 500;
+}
+label {
+  margin-top: 5px;
+}
+button {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.logo {
+  background-image: url(C:\Users\Usuário\pEasyMarine\src\app\cadastro\imagens\logo-easymarine.jpg);
+  background-repeat: no-repeat;
+  margin-top: 120px;
+}
+.texto {
+  width: 450px;
+  margin-top: 150px;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+}
+.app {
+  margin-top: 200px;
+  margin-left: 150px;
+  height: 50px;
+  width: 150px;
+}
+
